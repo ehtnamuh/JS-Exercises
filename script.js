@@ -50,3 +50,88 @@ function getReadingStatus(index){
 console.log(getReadingStatus(2));
 console.log(getReadingStatus(1));
 console.log(getReadingStatus(0));
+
+var cart = [ 
+   {
+       name: 'Shoes',
+       price: 560,
+       quantity: 4
+   },
+   {
+       name: 'Regular Tees',
+       price: 455.50,
+       quantity: 6
+   },
+   {
+       name: 'Socks',
+       price: 65.99,
+       quantity: 2
+   }];
+
+var item = {
+  name: 'Aaa',
+  price: 0.00,
+  quantity: 1
+};
+
+function addItem(newIem){
+    cart.push(newIem);
+}
+
+function compareQuantity(a, b){
+    return a.quantity - b.quantity;
+}
+
+function comparePrice(a, b){
+    return a.price -b.price;
+}
+
+function compareName(item1, item2){
+    if (item1.name < item2.name)
+        return -1;
+    if ( item1.name > item2.name)
+        return 1;
+    return 0;
+}
+
+function sortingSama(category){
+    if (category === 'price') {
+        cart.sort(comparePrice);
+    } else if (category === 'quantity') {
+        cart.sort(compareQuantity);
+    } else if ( category === 'name'){
+        cart.sort(compareName);
+    }
+    console.log(cart);
+}
+
+function findByName( name ) {
+    var slav = [];
+    for(var i=0; i<cart.length; i++) {
+                if (cart[i].name === name) {
+                    console.log("Found: "+ cart[i].name);
+                    slav.push(cart[i]);
+                }
+    }
+    console.log(slav);
+}
+
+function totalCost(){
+    var cost = 0;
+    for(var i=0; i<cart.length; i++) {
+        cost += cart[i].price;
+    }
+    console.log("Total Cost: " + cost);
+}
+
+
+addItem(item);
+sortingSama('name');
+sortingSama('quantity');
+sortingSama('price');
+findByName('Shs')
+totalCost();
+
+
+
+
