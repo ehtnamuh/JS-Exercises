@@ -22,6 +22,31 @@ function checkEmail(emailStirng){
     return match;
 }
 
-console.log(checkEmail("gogo@hon.com"));
-console.log(checkEmail("dfsasdfljkldfkjakjsdfkjdfskj"));
+//console.log(checkEmail("gogo@hon.com"));
+//console.log(checkEmail("gg@gmail.com"));
 
+var library = [ 
+   {
+       author: 'Bill Gates',
+       title: 'The Road Ahead',
+       readingStatus: true
+   },
+   {
+       author: 'Steve Jobs',
+       title: 'Walter Isaacson',
+       readingStatus: true
+   },
+   {
+       author: 'Suzanne Collins',
+       title:  'Mockingjay: The Final Book of The Hunger Games', 
+       readingStatus: false
+   }];
+
+function getReadingStatus(index){
+    console.log("Idi Nahui " + index);
+    return library[index].readingStatus;
+}
+
+console.log(getReadingStatus(2));
+console.log(getReadingStatus(1));
+console.log(getReadingStatus(0));
